@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="home.css">
+        <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/dot-luv/jquery-ui.css" />
+        <link rel="stylesheet" href="filter.css">
+    </head>
+    <body class="d-flex flex-column align-items-center">
+        
+        <div id="backgroundiv">
+          <img src="./logo2.png">
+          <form action="./index.html" class="d-flex flex-column justify-content-start align-items-center">
+            <div class="d-flex justify-content-between align-items-start w-100">
+              <h1>Filter Results</h1>
+              <a href="./index.html">
+                <button type="button" class="close" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </a>
+            </div>
+
+            <div class="row w-100">
+              <div class="col">
+                <label for="location"><h6>Location</h6></label>
+                <select id="location" name="location">
+                  <option>Any</option>
+                  <option>Ballard</option>
+                  <option>Belltown</option>
+                  <option>Capital Hill</option>
+                  <option>Chinatown/International District</option>
+                  <option>Downtown</option>
+                  <option>Fremont</option>
+                  <option>Pioneer Square</option>
+                  <option>Queen Anne</option>
+                  <option>SoDo</option>
+                  <option>South Lake Union</option>
+                  <option>University District</option>
+                </select>
+              </div>
+              <div class="col">
+                <label for="industry"><h6>Industry</h6></label>
+                <select id="industry" name="industry">
+                  <option>Any</option>
+                  <option>Food</option>
+                  <option>Hospitality</option>
+                  <option>Construction</option>
+                  <option>Retail</option>
+                  <option>Leisure</option>
+                  <option>Health Care</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row w-100">
+              <div class="col">
+                <label for="workingTime"><h6>Times you'd like to work</h6></label>
+                <div id="workingTime">
+                  <input type="checkbox" checked="checked" id="morning">
+                  <label for="morning">Mornings (6am - 12pm)</label>
+                  <br>
+                  <input type="checkbox" checked="checked" id="afternoon">
+                  <label for="afternoon">Afternoons (12pm - 6pm)</label>
+                  <br>
+                  <input type="checkbox" checked="checked" id="evening">
+                  <label for="afternoon">Evenings (6pm - 12am)</label>
+                  <br>
+                  <input type="checkbox" checked="checked" id="night">
+                  <label for="afternoon">Nights (12am - 6am)</label>
+                  <br>
+                </div>
+              </div>
+              <div class="col">
+                <label for="day"><h6>Days you'd like to work</h6></label>
+                <div id="workingTime" class="row w-100">
+                  <div class="col">
+                    <input type="checkbox" checked="checked" id="mndy">
+                    <label for="mndy">Monday</label>
+                    <br>
+                    <input type="checkbox" checked="checked" id="tsdy">
+                    <label for="tsdy">Tuesday</label>
+                    <br>
+                    <input type="checkbox" checked="checked" id="wddy">
+                    <label for="wddy">Wednesday</label>
+                    <br>
+                    <input type="checkbox" checked="checked" id="thdy">
+                    <label for="thdy">Thursday</label>
+                    <br>
+                  </div>
+                  <div class="col">
+                    <input type="checkbox" checked="checked" id="frdy">
+                    <label for="frdy">Friday</label>
+                    <br>
+                    <input type="checkbox" checked="checked" id="stdy">
+                    <label for="stdy">Saturday</label>
+                    <br>
+                    <input type="checkbox" checked="checked" id="sndy">
+                    <label for="sndy">Sunday</label>
+                    <br>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+
+            <div class="row w-100">
+              <div class="col">
+                <label for="date"><h6>Date posted</h6></label>
+                <select id="date" name="date">
+                  <option>Any</option>
+                  <option>Today</option>
+                  <option>This week</option>
+                  <option>Last 2 weeks</option>
+                  <option>This month</option>
+                  <option>Last 3 months</option>
+                  <option>This year</option>
+                </select>
+              </div>
+              <div class="col">
+                <label for="fullpartime"><h6>Full time or part time</h6></label>
+                <div id="fullpartime">
+                  <label class="radio-inline mr-5">
+                    <input type="radio" name="optradio" checked>Full time
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="optradio">Part time
+                  </label>
+                </div>
+              </div>
+              <input type="submit" value="Search!" id="start">
+              <!-- <a href="./index.html">
+                <input type="submit" value="Search!" id="start">
+              </a>               -->
+            </div>
+          </form>
+        </div>
+        <!-- Filters -->
+        
+        
+        <script type="text/javascript">
+          $("#slider-range").slider({
+            range: true,
+            min: 0,
+            max: 1439,
+            values: [0, 1439],
+            slide: slideTime
+          });
+          function slideTime(event, ui){
+            var val0 = $("#slider-range").slider("values", 0),
+              val1 = $("#slider-range").slider("values", 1),
+              minutes0 = parseInt(val0 % 60, 10),
+              hours0 = parseInt(val0 / 60 % 24, 10),
+              minutes1 = parseInt(val1 % 60, 10),
+              hours1 = parseInt(val1 / 60 % 24, 10);
+              
+            startTime = getTime(hours0, minutes0);
+            endTime = getTime(hours1, minutes1);
+            $("#time").text(startTime + ' - ' + endTime);
+          }
+          function getTime(hours, minutes) {
+            var time = null;
+            minutes = minutes + "";
+            if (hours < 12) {
+              time = "AM";
+            }
+            else {
+              time = "PM";
+            }
+            if (hours == 0) {
+              hours = 12;
+            }
+            if (hours > 12) {
+              hours = hours - 12;
+            }
+            if (minutes.length == 1) {
+              minutes = "0" + minutes;
+            }
+            return hours + ":" + minutes + " " + time;
+          }
+          slideTime();
+        </script>
+    </body>
+</html>
