@@ -123,6 +123,7 @@ body {
 
 #backgroundiv {
   background-image: url("background.jpg");
+  /* background-color: #DBE4EE; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -133,6 +134,7 @@ body {
 #filbut {
   /* background-color: #0197f6; */
   color: white;
+  /* color: #EBC8B4; */
   background-repeat: no-repeat;
   /* border: 2px solid black; */
   cursor: pointer;
@@ -144,7 +146,9 @@ body {
   padding: 1rem 1rem;
   margin: 0;
   text-decoration: none;
-  background: #0069ed;
+  /* background: #0069ed; */
+  /* background: #054A91; */
+  background: #0277bd;
   /* color: #ffffff; */
   font-family: sans-serif;
   font-size: 1rem;
